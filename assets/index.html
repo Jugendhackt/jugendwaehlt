@@ -21,8 +21,8 @@
       <ul class="nav nav-pills pull-right">
         <li class="active"><a href="#">Abstimmen</a></li>
         <li class="dropdown">
-          <a id="statistikenDrop" role="button" data-toggle="dropdown" href="#">Statistiken <b class="caret"></b></a>
-          <ul id="statistikenMenu" class="dropdown-menu" role="menu" aria-labelledby="statistikenDrop">
+          <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="">Dropdown2 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Themengebiete</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Parteien</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Something else here</a></li>
@@ -31,7 +31,7 @@
           </ul>
         </li>
         <li><a href="#">Impressum</a></li>
-      </ul> <!-- /tabs -->
+      </ul><!-- /tabs -->
       <h3 class="text-muted">Jugend wählt</h3>
       </div>
       <div class="jumbotron">
@@ -67,5 +67,10 @@
     </div>
     <script src="res/js/jquery-1.10.2.min.js"></script>
     <script src="res/js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" >
+      $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+      }); 
+    </script>
   </body>
 </html>
