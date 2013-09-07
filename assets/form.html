@@ -1,124 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
-    <title>Jugend w&Atilde;&curren;hlt</title>
-    <link href="res/css/bootstrap.css" rel="stylesheet">
-    <link href="res/css/jugendwaehlt.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+  <title>Jugend w&Atilde;&curren;hlt</title>
+  <link href="res/css/bootstrap.css" rel="stylesheet">
+  <link href="res/css/jugendwaehlt.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="res/js/html5shiv.js"></script>
       <script src="res/js/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-      <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="#">Abstimmen</a></li>
-        <li class="dropdown">
-          <a id="statistikenDrop" role="button" data-toggle="dropdown" href="#">Statistiken <b class="caret"></b></a>
-          <ul id="statistikenMenu" class="dropdown-menu" role="menu" aria-labelledby="statistikenDrop">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Themengebiete</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Parteien</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Something else here</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Separated link</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Impressum</a></li>
-      </ul> <!-- /tabs -->
-      <h3 class="text-muted">Jugend w&auml;hlt</h3>
-      </div>
-      <div class="jumbotron">
-        <h1>Abstimmen!</h1>
-                <p class="lead">
-        <form action="system/vote.php" method="post">
-                        <fieldset>
-                               <label class="radio-inline">
-  <input type="radio" name="party" id="inlineradio1" value="option1">CDU/CSU
-</label>
-<label class="radio-inline">
-  <input type="radio" name="party" id="inlineradio2" value="option2">SPD
-</label>
-<label class="radio-inline">
-  <input type="radio" name="party" id="inlineradio3" value="option3">B90/Gr&uuml;ne
-</label>
-<label class="radio-inline">
-  <input type="radio" name="party" id="inlineradio3" value="option3">Die Linke
-</label>
-<label class="radio-inline">
-  <input type="radio" name="party" id="inlineradio3" value="option3">FDP
-</label>
-
-
-<div class="checkbox">
-  <label>
-    <input type="checkbox" value="">
-    Wirtschaftspolitk
-  </label>
-</div>
-
-<div class="form-group">
-
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter comment">
-  </div>
-
-<div class="checkbox">
-  <label>
-    <input type="checkbox" value="">
-    Umweltpolitik
-  </label>
-</div>
-<div class="form-group">
-
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter comment">
-  </div>
-
-<div class="checkbox">
-  <label>
-    <input type="checkbox" value="">
-    Sozialpolitik   <br>
-  </label>
-</div>
-<div class="form-group">
-
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter comment">
-  </div>
- <div class="checkbox">
-  <label>
-    <input type="checkbox" value="">
-    Innenpolitik   <br>
-  </label>
-</div>
-
-<div class="form-group">
-
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter comment">
-  </div>
-
-<div class="checkbox">
-  <label>
-    <input type="checkbox" value="">
-    Au&szlig;enploitik
-  </label>
-</div>
-<div class="form-group">
-
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter comment">
-  </div>
-
-                        </fieldset>
-
-                        <p>
-                                <input type="submit" value="Abstimmen!" name="submit" class="btn btn-lg btn-success"/>
-                        </p>
-                </form>
-        </p>
+      <![endif]-->
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#">Abstimmen</a></li>
+            <li class="dropdown">
+              <a id="statistikenDrop" role="button" data-toggle="dropdown" href="#">Statistiken <b class="caret"></b></a>
+              <ul id="statistikenMenu" class="dropdown-menu" role="menu" aria-labelledby="statistikenDrop">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Themengebiete</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Parteien</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Something else here</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Separated link</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Impressum</a></li>
+          </ul> <!-- /tabs -->
+          <h3 class="text-muted">Jugend w&auml;hlt</h3>
+        </div>
+        <!-- End Header; Begin Content -->
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>Deine Stimme z&auml;hlt!</h1>
+            <form role="form">
+              <label class="radio-inline">
+                <input type="radio" name="parteiRadio" id="spdRadio" value="SPD"> SPD
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="parteiRadio" id="cducsuRadio" value="CDUCSU"> CDUCSU
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="parteiRadio" id="b90grueneRadio" value="B90Gruene"> B90/Gr&uuml;ne
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="parteiRadio" id="dielinkeRadio" value="DieLinke"> Die Linke
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="parteiRadio" id="fdpRadio" value="FDP"> FDP
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="parteiRadio" id="piratenRadio" value="Piraten"> Piraten
+              </label>
+              <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="collapse" data-target="#mehrParteien">Zeig mir mehr!</button>
+              <div id="mehrParteien" class="collapse">
+                <label class="radio-inline">
+                  <input type="radio" name="parteiRadio" id="dieparteiRadio" value="DiePartei"> Die Partei
+                </label>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Themengebiete</h3>
+                </div>
+                <div class="panel-body">
+                  <button type="button" id="internet" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Internet')" data-toggle="button">Internet</button>
+                  <button type="button" id="bildungundforschung" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Bildung und Forschung')" data-toggle="button">Bildung und Forschung</button>
+                  <button type="button" id="umwelt" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Umwelt')" data-toggle="button">Umwelt</button>
+                  <button type="button" id="verbraucherschutz" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Verbraucherschutz')" data-toggle="button">Verbraucherschutz</button>
+                  <button type="button" id="kunstundkultur" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Kunst und Kultur')" data-toggle="button">Kunst und Kultur</button>
+                  <button type="button" id="arbeit" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Arbeit')" data-toggle="button">Arbeit</button>
+                  <button type="button" id="familieundjugend" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Familie und Jugend')" data-toggle="button">Familie und Jugend</button>
+                  <button type="button" id="gesundheit" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Gesundheit')" data-toggle="button">Gesundheit</button>
+                  <button type="button" id="aussenundsicherheitspolitik" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Außen- und Sicherheitspolitik')" data-toggle="button">Außen- und Sicherheitspolitik</button>
+                  <button type="button" id="wirtschaftundfinanzen" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Wirtschaft und Finanzen')" data-toggle="button">Wirtschaft und Finanzen</button>
+                  <button type="button" id="innneundrechtspolitik" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Innen- und Rechtspolitik')" data-toggle="button">Innen- und Rechtspolitik</button>
+                  <button type="button" id="steuern" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Steuern')" data-toggle="button">Steuern</button>
+                  <button type="button" id="energie" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Energie')" data-toggle="button">Energie</button>
+                  <button type="button" id="bauenundverkehr" class="btn btn-info btn-partei" onclick="toggleTextbox(this, 'Bauen und Verkehr')" data-toggle="button">Bauen und Verkehr</button>
+                </div>
+              </div>
+              <div id="themen">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </div>
         </div>
       <div class="footer">
         <p>&copy; Team JugendW&auml;hlt 2013</p>
@@ -126,5 +96,6 @@
     </div>
     <script src="res/js/jquery-1.10.2.min.js"></script>
     <script src="res/js/bootstrap.min.js"></script>
+    <script src="res/js/form.js"></script>
   </body>
-</html>
+  </html>
