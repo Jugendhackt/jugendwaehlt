@@ -29,15 +29,17 @@ class Database {
 				$where_queries[] = $k.' = :'.$v;
 			}
 
-			$sql = 'SELECT * FROM '.$table.' WHERE '.implode(' AND ', $where_queries);
-
-			$sth = $this->db->prepare($sql);
-			foreach($where as $k=>$v) $sth->bindValue(':'.$k, $v);
+			$sth = $this->db->prepare('SELECT * FROM ? WHERE ?');
+			$sth->bindValue(1, $table);
+			$sth->bindValue(2, implode(' AND ', $where_queries));
+			foreach($where as $k=>$v) {
+				 $sth->bindValue(':'.$k, $v);
+			}
 		}
 		else
 		{
-			$sql = 'SELECT * FROM Partei';
-			$res = $this->db->prepare($sql);
+			$res = $this->db->prepare('SELECT * FROM ?');
+			$res->bindValue(1, $table);
 		}
 
 		$res->execute();
@@ -46,6 +48,14 @@ class Database {
 
 	public function fetchAll($table, $where='') {
 		return $this->getResult($table, $where)->fetchAll(PDO::FETCH_ASSOC);
+	}
+	
+	public function vote($partei_id,$thema_id, $why){
+		$res = $this->db->prepare("INSERT INTO Uservoting(Partei_ID, Themengebiet_ID, Begruendung) VALUES(?, ?, ?)");
+		$res->bindValue(1, $partei_id);
+		$res->bindValue(2, $thema_id);
+		$res->bindValue(3, $why);
+		return $res->execute();
 	}
 
 }
