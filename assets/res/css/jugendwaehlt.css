@@ -4,6 +4,39 @@ body {
   padding-bottom: 20px;
 }
 
+.input_hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+.selected {
+    background-color: #ccc;
+}
+
+#parteien label {
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 0px;
+}
+
+
+#parteien label:hover {
+    background-color: #efefef;
+}
+
+#parteien label img {
+    padding: 3px;
+    
+}
+
+
+
+
+
+
+
+
+
 .btn-partei{
   margin-bottom: 5px;
 }

@@ -36,11 +36,11 @@
         </div>
         <!-- End Header; Begin Content -->
         <div class="row">
-          <div class="col-xs-12">
+          <div class="col-xs-12" id="parteien">
             <h1>Deine Stimme z&auml;hlt!</h1>
             <form role="form">
               <label class="radio-inline">
-                <input type="radio" name="parteiRadio" id="spdRadio" value="SPD"> SPD
+                <input type="radio" name="parteiRadio" id="spdRadio" value="SPD"><img src="res/img/logos/SPD.png" alt="Super User" class="shadow" />
               </label>
               <label class="radio-inline">
                 <input type="radio" name="parteiRadio" id="cducsuRadio" value="CDUCSU"> CDUCSU
@@ -97,5 +97,13 @@
     <script src="res/js/jquery-1.10.2.min.js"></script>
     <script src="res/js/bootstrap.min.js"></script>
     <script src="res/js/form.js"></script>
+    <script type="text/javascript">//<![CDATA[ 
+    $(window).load(function(){
+      $('#parteien input:radio').addClass('input_hidden');
+      $('#parteien label').click(function() {
+        $(this).addClass('selected').siblings().removeClass('selected');
+      });
+    });//]]>  
+    </script>
   </body>
   </html>
