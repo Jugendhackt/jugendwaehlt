@@ -51,11 +51,11 @@ class Database {
 		return $this->getResult($table, $where)->fetchAll(PDO::FETCH_ASSOC);
 	}
 	
-	public function vote($partei_id, $thema_id, $why){
+	public function vote($partei_id, $thema_id, $grund){
 		$res = $this->db->prepare("INSERT INTO Uservoting(Partei_ID, Themengebiet_ID, Begruendung) VALUES(?, ?, ?)");
 		$res->bindValue(1, $partei_id);
 		$res->bindValue(2, $thema_id);
-		$res->bindValue(3, $why);
+		$res->bindValue(3, $grund);
 		return $res->execute();
 	}
 
