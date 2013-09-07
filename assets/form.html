@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
-    <title>Jugend wählt</title>
+    <title>Jugend w&Atilde;&curren;hlt</title>
     <link href="res/css/bootstrap.css" rel="stylesheet">
     <link href="res/css/jugendwaehlt.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -32,28 +32,94 @@
         </li>
         <li><a href="#">Impressum</a></li>
       </ul> <!-- /tabs -->
-      <h3 class="text-muted">Jugend wählt</h3>
+      <h3 class="text-muted">Jugend w&auml;hlt</h3>
       </div>
       <div class="jumbotron">
         <h1>Abstimmen!</h1>
-		<p class="lead">
+                <p class="lead">
         <form action="system/vote.php" method="post">
-			<fieldset>
-				<input type="radio" name="partei" value="spd" id="spd" /><label for="spd">SPD</label><br/>
-				<input type="radio" name="partei" value="gruene" id="gruene" /><label for="gruene">Grüne</label>
-			</fieldset>
-			<p>
-				<input type="submit" value="Abstimmen!" name="submit" class="btn btn-lg btn-success"/>
-			</p>
-		</form>
-	</p>
-	      </div>
-      <div class="row marketing">
-        <div class="col-lg-6">
-			<h4>&Uuml;ber JugendW&auml;hlt!</h4>
-			<p>Simple Umfragesoftware, wobei Gründe für die Entscheidung der Befragten erhoben werden, was tiefgreifendere Auswertungen erlaubt. Bei diesem Vorgang wird Opendata generiert, die auch über eine öffentliche API genutzt werden kann, die auch die Kommunikation zwischen Front- und Backend sicherstellt.</p>
+                        <fieldset>
+                               <label class="radio-inline">
+  <input type="radio" name="party" id="inlineradio1" value="option1">CDU/CSU
+</label>
+<label class="radio-inline">
+  <input type="radio" name="party" id="inlineradio2" value="option2">SPD
+</label>
+<label class="radio-inline">
+  <input type="radio" name="party" id="inlineradio3" value="option3">B90/Gr&uuml;ne
+</label>
+<label class="radio-inline">
+  <input type="radio" name="party" id="inlineradio3" value="option3">Die Linke
+</label>
+<label class="radio-inline">
+  <input type="radio" name="party" id="inlineradio3" value="option3">FDP
+</label>
+
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox" value="">
+    Wirtschaftspolitk
+  </label>
+</div>
+
+<div class="form-group">
+
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter comment">
+  </div>
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox" value="">
+    Umweltpolitik
+  </label>
+</div>
+<div class="form-group">
+
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter comment">
+  </div>
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox" value="">
+    Sozialpolitik   <br>
+  </label>
+</div>
+<div class="form-group">
+
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter comment">
+  </div>
+ <div class="checkbox">
+  <label>
+    <input type="checkbox" value="">
+    Innenpolitik   <br>
+  </label>
+</div>
+
+<div class="form-group">
+
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter comment">
+  </div>
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox" value="">
+    Au&szlig;enploitik
+  </label>
+</div>
+<div class="form-group">
+
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter comment">
+  </div>
+
+                        </fieldset>
+
+                        <p>
+                                <input type="submit" value="Abstimmen!" name="submit" class="btn btn-lg btn-success"/>
+                        </p>
+                </form>
+        </p>
         </div>
-      </div>
       <div class="footer">
         <p>&copy; Team JugendW&auml;hlt 2013</p>
       </div>
