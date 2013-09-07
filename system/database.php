@@ -1,5 +1,5 @@
 <?php
-class Database(){
+class Database{
 	private $pdo;
 	public function __construct($user,$pw){
 		try{
@@ -12,7 +12,7 @@ class Database(){
 	public function partei(){
 		$query = $pdo->prepare("SELECT * FROM Partei");
 		$res = $query->execute();
-		return $res->fetchAll()
+		return $res->fetchAll();
 	}
 
 
