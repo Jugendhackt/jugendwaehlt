@@ -36,14 +36,16 @@
       </div>
       <div class="jumbotron">
         <h1>Jugend wählt <br/>&mdash; <br/>Abstimmen!</h1>
+		<p class="lead">
         <form action="system/vote.php" method="post">
-<pre>{for partei in parteien:
-	partei-radio
-}</pre>	
+			<fieldset>
+				<input type="radio" name="spd" id="spd" /><label for="spd">SPD</label><br/>
+				<input type="radio" name="gruene" id="gruene" /><label for="gruene">Grüne</label><br/>
 			<p>
 				<input type="submit" value="Abstimmen!" name="submit" class="btn btn-lg btn-success"/>
 			</p>
 		</form>
+	</p>
 	      </div>
       <div class="row marketing">
         <div class="col-lg-6">
