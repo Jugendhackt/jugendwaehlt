@@ -12,5 +12,7 @@ $begruendung = $_POST['why'];
 $db = new Database(SQL_HOSTNAME, SQL_DATABASE, SQL_USERNAME, SQL_PASSWORD);
 if(!($db->vote($partei_id, $thema_id, $begruendung))){
 	exit("Fail!");
+}else{
+	header(Location: /);
 }
 ?>
