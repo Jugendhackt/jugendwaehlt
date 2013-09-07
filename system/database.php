@@ -1,39 +1,49 @@
 <?php
-class Database{
-	private $pdo;
-	public function __construct($user,$pw){
-		try{
-                	$this->pdo = PDO("mysql:dbname=Schaubsql2;host=localhost", $user, $pw);
-		}catch(PDOException $e){
-			exit("Fail!");
+class Database {
+	private $db;
+
+	function __construct($hostname, $database, $username, $password) {
+		try {
+			$db = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
+		}
+		catch(PDOException $e) {
+			throw new Exception('Could not connect to database. Error: ' . $e->getMessage());
 		}
 	}
-	
-	public function partei(){
-		$query = $pdo->prepare("SELECT * FROM Partei");
-		$res = $query->execute();
-		return $res->fetchAll();
-	}
-	
-	public function themengebiet(){
-		$query = $pdo->prepare("SELECT * FROM Themengebiet");
-		$res = $query->execute();
-		return $res->fetchAll();
-	}
-	
-	public function themengebiet_has_uservoting(){
-		$query = $pdo->prepare("SELECT * FROM Themengebiet_has_Uservoting");
-		$res = $query->execute();
-		return $res->fetchAll();
-	}
-	
-	public function uservoting(){
-		$query = $pdo->prepare("SELECT * FROM Uservoting");
-		$res = $query->execute();
-		return $res->fetchAll();
-	}
 
-
+	/*
+	public function login($username, $password) {
+		$sql = 'SELECT id FROM `users` WHERE `username` = ? AND `password` = ?';
+		$res = $db->prepare($sql);
+		$res->execute(array($username, $password));
+		return $res->fetchColumn();
+	}
+	*/
+	
+	public function get_Partei()){
+		$query = $db->prepare("SELECT * FROM Partei");
+		$res = $query->execute();
+		return $res->fetchAll();
+	}
+	
+	public function get_Themengebiet(){
+		$query = $db->prepare("SELECT * FROM Themengebiet");
+		$res = $query->execute();
+		return $res->fetchAll();
+	}
+	
+	public function get_Themengebiet_has_Uservoting(){
+		$query = $db->prepare("SELECT * FROM Themengebiet_has_Uservoting");
+		$res = $query->execute();
+		return $res->fetchAll();
+	}
+	
+	public function get_Uservoting(){
+		$query = $db->prepare("SELECT * FROM Uservoting");
+		$res = $query->execute();
+		return $res->fetchAll();
+	}
+	
 }
 
 ?>
