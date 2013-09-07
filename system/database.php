@@ -4,7 +4,7 @@ class Database {
 
 	function __construct($hostname, $database, $username, $password) {
 		try {
-			$db = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
+			$this->db = new PDO('mysql:host='.$hostname.';dbname='.$database, $username, $password);
 		}
 		catch(PDOException $e) {
 			throw new Exception('Could not connect to database. Error: ' . $e->getMessage());
@@ -19,31 +19,35 @@ class Database {
 		return $res->fetchColumn();
 	}
 	*/
-	
-	public function get_Partei()){
-		$query = $db->prepare("SELECT * FROM Partei");
-		$res = $query->execute();
-		return $res->fetchAll();
+
+	private function getResult($table, $where='') {
+		$where_queries = array();
+
+		if(!empty($where)) {
+
+			foreach($where as $k=>$v) {
+				$where_queries[] = $k.' = :'.$v;
+			}
+
+			$sql = 'SELECT * FROM '.$table.' WHERE '.implode(' AND ', $where_queries);
+
+			$sth = $this->db->prepare($sql);
+			foreach($where as $k=>$v) $sth->bindValue(':'.$k, $v);
+		}
+		else
+		{
+			$sql = 'SELECT * FROM Partei';
+			$res = $this->db->prepare($sql);
+		}
+
+		$res->execute();
+		return $res;
 	}
-	
-	public function get_Themengebiet(){
-		$query = $db->prepare("SELECT * FROM Themengebiet");
-		$res = $query->execute();
-		return $res->fetchAll();
+
+	public function fetchAll($table, $where='') {
+		return $this->getResult($table, $where)->fetchAll(PDO::FETCH_ASSOC);
 	}
-	
-	public function get_Themengebiet_has_Uservoting(){
-		$query = $db->prepare("SELECT * FROM Themengebiet_has_Uservoting");
-		$res = $query->execute();
-		return $res->fetchAll();
-	}
-	
-	public function get_Uservoting(){
-		$query = $db->prepare("SELECT * FROM Uservoting");
-		$res = $query->execute();
-		return $res->fetchAll();
-	}
-	
+
 }
 
 ?>
