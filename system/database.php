@@ -1,3 +1,4 @@
+<?php
 class Database(){
 	private $pdo;
 	function __construct($user,$pw){
@@ -11,3 +12,5 @@ class Database(){
 
 
 }
+
+?>

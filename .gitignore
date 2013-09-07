@@ -6,5 +6,5 @@
 *.war
 *.ear
 
-
+system/config.php
 .DS_Store
