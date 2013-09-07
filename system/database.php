@@ -32,28 +32,15 @@ class Database {
 				$where_queries[] = $k." = ?";
 			}
 
-<<<<<<< HEAD
-			$sth = $this->db->prepare('SELECT * FROM ? WHERE ?');
-			$sth->bindValue(1, $table);
-			$sth->bindValue(2, implode(' AND ', $where_queries));
-			foreach($where as $k=>$v) {
-				 $sth->bindValue(':'.$k, $v);
-=======
 			$res = $this->db->prepare("SELECT * FROM ".$table." WHERE ".implode(' AND ', $where_queries));
 			foreach($where as $k=>$v) {
 				 $res->bindValue($indexWhere, $v);
 				 $indexWhere++;
->>>>>>> Database fixes, Vote, Where-Feature in JSON
 			}
 		}
 		else
 		{
-<<<<<<< HEAD
-			$res = $this->db->prepare('SELECT * FROM ?');
-			$res->bindValue(1, $table);
-=======
 			$res = $this->db->prepare("SELECT * FROM ".$table);
->>>>>>> Database fixes, Vote, Where-Feature in JSON
 		}
 
 		$res->execute();
@@ -64,11 +51,7 @@ class Database {
 		return $this->getResult($table, $where)->fetchAll(PDO::FETCH_ASSOC);
 	}
 	
-<<<<<<< HEAD
-	public function vote($partei_id,$thema_id, $why){
-=======
 	public function vote($partei_id, $thema_id, $why){
->>>>>>> Database fixes, Vote, Where-Feature in JSON
 		$res = $this->db->prepare("INSERT INTO Uservoting(Partei_ID, Themengebiet_ID, Begruendung) VALUES(?, ?, ?)");
 		$res->bindValue(1, $partei_id);
 		$res->bindValue(2, $thema_id);
