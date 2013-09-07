@@ -14,6 +14,24 @@ class Database{
 		$res = $query->execute();
 		return $res->fetchAll();
 	}
+	
+	public function themengebiet(){
+		$query = $pdo->prepare("SELECT * FROM Themengebiet");
+		$res = $query->execute();
+		return $res->fetchAll();
+	}
+	
+	public function themengebiet_has_uservoting(){
+		$query = $pdo->prepare("SELECT * FROM Themengebiet_has_Uservoting");
+		$res = $query->execute();
+		return $res->fetchAll();
+	}
+	
+	public function uservoting(){
+		$query = $pdo->prepare("SELECT * FROM Uservoting");
+		$res = $query->execute();
+		return $res->fetchAll();
+	}
 
 
 }
