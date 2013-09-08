@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+    <title>Jugend w&Atilde;&curren;hlt</title>
+    <link href="res/css/bootstrap.css" rel="stylesheet">
+    <link href="res/css/jugendwaehlt.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="res/js/html5shiv.js"></script>
+      <script src="res/js/respond.min.js"></script>
+    <![endif]-->
+
+      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+          ['Partei', 'Internet', 'Bildung/Forschung', 'Umwelt', 'Verbraucherschutz', 'Kunst/Kultur', 'Familie/Jugend', 'Gesundheit', 'Auﬂen/Sicherheitspolitik', 'Energie', 'Arbeit', 'Wirtschaft/Finanzen', 'Innen', 'Steuern', 'Bauen/Verkehr'],
+          ['CDU',  1,      2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+
+        ]);
+
+
+
+        var options = {
+          title: '',
+          hAxis: {title: 'Partei', titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_column'));
+        chart.draw(data, options);
+      }
+    </script>
+
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Thema', 'Stimmen pro Partei', 'Stimmen gesamt', 'Partei',     'Population'],
+          ['Internet',    80.66,              167,      'CDU/CSU',  33739900],
+          ['Bildung/Forschung',    80.66,              1.67,      'CDU/CSU',  33739900],
+          ['Umwelt',    79.84,              136,      'Gr&uuml;ne',         81902307],
+          ['Verbraucherschutz',    78.6,               1.84,      'CDU/CSU',         5523095],
+          ['Kunst/Kultur',    72.73,              278,      'SPD',    79716203],
+          ['Familie/Jugend',    80.05,              200,         'SPD',         61801570],
+          ['Gesundheit',    72.49,              17,       'SPD',    73137148],
+          ['Auﬂen/Sicherheitspolitik',    68.09,              477,      'Linke',    31090763],
+          ['Energie',    81.55,              296,      'Gr&uuml;ne',    7485600],
+          ['Arbeit',    68.6,               154,      'SPD',         141850000],
+          ['Wirtschaft/Finanzen',    78.09,              2.05,      'CDU/CSU',  307007000],
+          ['Innen',    78.09,              205,      'FDP',  307007000] ,
+          ['Steuern',    78.09,              205,      'FDP',  307007000],
+          ['Wirtschaft/Finanzen',    78.09,              2.05,      'CDU/CSU',  307007000],
+        ]);
+
+        var options = {
+          title: '',
+          hAxis: {title: 'Stimmen pro Partei'},
+          vAxis: {title: 'Stimmen gesamt'},
+          colors: ['black','green','red','pink','yellow','orange'], 
+          bubble: {textStyle: {fontSize: 11}}
+
+        };
+
+        var chart = new google.visualization.BubbleChart(document.getElementById('chart_bubble'));
+        chart.draw(data, options);
+      }
+    </script>
+
+
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+      <ul class="nav nav-pills pull-right">
+        <li class="active"><a href="#">Abstimmen</a></li>
+        <li class="dropdown">
+          <a id="statistikenDrop" role="button" data-toggle="dropdown" href="#">Statistiken <b class="caret"></b></a>
+          <ul id="statistikenMenu" class="dropdown-menu" role="menu" aria-labelledby="statistikenDrop">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Themengebiete</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Parteien</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Something else here</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Separated link</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Impressum</a></li>
+      </ul> <!-- /tabs -->
+      <h3 class="text-muted">Jugend w&auml;hlt</h3>
+      </div>
+      <div class="jumbotron">
+      <h1>Statistiken</h1>
+        <h2 align="left" >Themen nach Partei geordnet</h2>
+       <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">S&auml;ulendiaramm</a></li>
+    <li><a href="#tab2" data-toggle="tab">Blasendiagramm</a></li>
+
+    </ul>
+     <div class="tab-content">
+       <div class="tab-pane active" id="tab1">
+
+       <div class="btn-toolbar">
+  <div class="btn-group">
+
+  <button href="#tab2" type="button" class="btn btn-default">CDU/CSU</button>
+  <button type="button" class="btn btn-default">SPD</button>
+  <button type="button" class="btn btn-default">B90/Gr&uuml;ne</button>
+  <button type="button" class="btn btn-default">Linke</button>
+  <button type="button" class="btn btn-default">FDP</button>
+   </div>
+ </div>
+       <div id="chart_column" style="width: device-width; height: device-heigth;"></div>
+       </div>
+
+       <div class="tab-pane" id="tab2">
+       <div id="chart_bubble" style="width:device-width ;  height:device-heigth;"></div>
+       </div>
+       </div>
+
+
+
+      <div class="footer">
+        <p>&copy; Team JugendW&auml;hlt 2013</p>
+      </div>
+    </div>
+    <script src="res/js/jquery-1.10.2.min.js"></script>
+    <script src="res/js/bootstrap.min.js"></script>
+  </body>
+</html>
