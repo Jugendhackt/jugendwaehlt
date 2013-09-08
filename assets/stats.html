@@ -1,54 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
-    <title>Jugend w&Atilde;&curren;hlt</title>
-    <link href="res/css/bootstrap.css" rel="stylesheet">
-    <link href="res/css/jugendwaehlt.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="res/js/html5shiv.js"></script>
-      <script src="res/js/respond.min.js"></script>
-    <![endif]-->
-
-    <script type="text/javascript" src="res/js/jw-stats.js"></script>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(draw_Parteien_Wahlen);
-    </script>
-
-    <script type="text/javascript">
-      /*
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart´2);
-      */
-    </script>
-
-
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+  <title>Jugend w&auml;hlt</title>
+  <link href="res/css/bootstrap.css" rel="stylesheet">
+  <link href="res/css/jugendwaehlt.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="res/js/html5shiv.js"></script>
+        <script src="res/js/respond.min.js"></script>
+        <![endif]-->
   </head>
   <body>
     <div class="container">
       <div class="header">
-      <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="#">Abstimmen</a></li>
-        <li class="dropdown">
-          <a id="statistikenDrop" role="button" data-toggle="dropdown" href="#">Statistiken <b class="caret"></b></a>
-          <ul id="statistikenMenu" class="dropdown-menu" role="menu" aria-labelledby="statistikenDrop">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Themengebiete</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Parteien</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Something else here</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Separated link</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Impressum</a></li>
-      </ul> <!-- /tabs -->
-      <h3 class="text-muted">Jugend w&auml;hlt</h3>
+        <ul class="nav nav-pills pull-right" style="margin-top: 40px;">
+          <li><a href="index.html">Abstimmen</a></li>
+          <li class="dropdown active">
+            <a id="statistikenDrop" role="button" data-toggle="dropdown" href="#">Statistiken <b class="caret"></b></a>
+            <ul id="statistikenMenu" class="dropdown-menu" role="menu" aria-labelledby="statistikenDrop">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="statsthemen.html">Themengebiete</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="statsParty.html">Parteien</a></li>
+            </ul>
+          </li>
+          <li><a href="ueberuns.html">&Uuml;ber uns</a></li>
+        </ul> <!-- /tabs -->
+        <img src="res/img/logo.png" alt="Jugend wählt!" height="100px;">
+        <!--<h3 class="text-muted">Jugend w&auml;hlt</h3>-->
       </div>
       <div class="jumbotron">
       <h1>Statistiken</h1>
@@ -66,5 +48,17 @@
     </div>
     <script src="res/js/jquery-1.10.2.min.js"></script>
     <script src="res/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/js/jw-stats.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(draw_Parteien_Wahlen);
+    </script>
+    <script type="text/javascript">
+      /*
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart´2);
+      */
+    </script>
   </body>
 </html>
