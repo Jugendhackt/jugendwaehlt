@@ -29,5 +29,5 @@ for($i = 0; $i < $count; $i++){
 }
 
 // Forwarding
-header("Location: /index.html");
+header("Location: /assets/index.html");
 ?>
