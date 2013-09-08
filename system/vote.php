@@ -10,8 +10,6 @@ $count = file_get_contents("http://jw.schaub.it/get.php?table=Themengebiete?acti
 
 //Calculating USER_ID
 $userid = $db->calculate_userid();
-echo $userid;
-
 // Vote
 for($i = 0; $i < $count; $i++){
 	
@@ -29,4 +27,5 @@ for($i = 0; $i < $count; $i++){
 		}
 	}
 }
+header("Location: ../");
 ?>
