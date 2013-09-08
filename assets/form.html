@@ -138,7 +138,8 @@
     $(window).load(function(){
       $('#parteien input:radio').addClass('input_hidden');
       $('#parteien label').click(function() {
-        $(this).addClass('selected').siblings().removeClass('selected');
+        $('#parteien label').removeClass('selected');
+        $(this).addClass('selected');
       });
     });
     </script>
