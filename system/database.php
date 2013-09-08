@@ -55,12 +55,22 @@ class Database {
 		return $this->getResult($table, $where)->rowCount(PDO::FETCH_ASSOC);
 	}
 	
-	public function vote($partei_id, $thema_id, $grund){
-		$res = $this->db->prepare("INSERT INTO Uservoting(Partei_ID, Themengebiet_ID, Begruendung) VALUES(?, ?, ?)");
+	public function vote($partei_id, $thema_id, $grund, $userid){
+		
+		$res = $this->db->prepare("INSERT INTO Uservoting(Partei_ID, Themengebiet_ID, Begruendung, USER_ID) VALUES(?, ?, ?, ?)");
 		$res->bindValue(1, $partei_id);
 		$res->bindValue(2, $thema_id);
 		$res->bindValue(3, $grund);
+		$res->bindValue(4, $userid);
 		return $res->execute();
+	}
+	public function calculate_userid(){
+		$userid_query = $this->db->prepare("SELECT `User_ID` FROM `Uservoting` ORDER BY `USER_ID` DESC");
+		$userid_query->execute();
+		$userid = $userid_query->fetchColumn();
+		$userid = $userid + 1;
+		$userid_query = null;
+		return $userid;
 	}
 
 }
