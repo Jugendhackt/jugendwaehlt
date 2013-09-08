@@ -59,7 +59,7 @@ function draw_Parteien_Wahlen() {
 			    var where2 = object['ID'];
 			    setTimeout(function() {}, 3000);
 			    data.addRows([
-			    	[object['Name'], 5]
+			    	[unescape(object['Name']), 5]
 			    	]);
 			}
 

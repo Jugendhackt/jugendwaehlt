@@ -32,7 +32,7 @@ if ($action == 'fetchAll') {
 
 	// UTF8_Encode & HTMLEntities
 	array_walk_recursive($result, function (&$value) {
-	    $value = utf8_encode(htmlentities($value));
+	    $value = utf8_encode($value);
 	});
 
 	// Print JSON(P)
