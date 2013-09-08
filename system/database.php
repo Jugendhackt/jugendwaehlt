@@ -21,7 +21,7 @@ class Database {
 		$where_queries = array();
 		$indexWhere = 1;
 
-		if ($table != 'Partei' && $table != 'Uservoting') {
+		if ($table != 'Partei' && $table != 'Uservoting' && $table != 'Themengebiete') {
 			echo 'Illegal table.';
 			exit();
 		}
