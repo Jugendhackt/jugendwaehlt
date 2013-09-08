@@ -12,7 +12,7 @@ function toggleTextbox (element, title) {
 		if ($.inArray(themaId, themen) == -1)
 		{
 			themen.push(themaId);
-			$("#themen").append("<div class=\"panel panel-info\" id=\"" + themaId + "Panel\"><div class=\"panel-heading\">" + title + "</div><div class=\"panel-body\"><textarea class=\"form-control\" rows=\"3\"></textarea></div></div>");
+			$("#themen").append("<div class=\"panel panel-info\" id=\"" + themaId + "Panel\"><div class=\"panel-heading\">" + title + "</div><div class=\"panel-body\"><input type=\"hidden\" name=\"themaID" + themen.length +"\" value=\"" + themaId + "\"><textarea class=\"form-control\" rows=\"3\" name=\"themaReason" + themen.length +"\"></textarea></div></div>");
 		}
 	}
 }
