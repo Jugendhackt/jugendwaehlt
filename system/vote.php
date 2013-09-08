@@ -1,19 +1,17 @@
 <?php
 require_once("config.php");
 require_once("database.php");
-
-// Prepare
-$partei_ID = $_POST['partei_ID'];
-$thema_ID = $_POST['thema_ID'];
-$grund = $_POST['grund'];
-
 // Database
 $db = new Database(SQL_HOSTNAME, SQL_DATABASE, SQL_USERNAME, SQL_PASSWORD);
 
 // Vote
-if(!($db->vote($partei_ID, $thema_ID, $grund))){
-	exit("SQL Error.");
-} else {
-	header('Location: /');
+$count = file_get_contents("http://jw.schaub.it/get.php?table=Themengebiete?action=count");
+for($i = 0; $i < $count; $i++){
+	if(isset($_POST['parteiRadio'], $_POST['themaID'. $i], $POST['themaReason' . $i])){
+		$vote_status = $db->vote($_POST['parteiRadio'], $_POST['themaID'. $i], $POST['themaReason' . $i];
+		if($vote_status == False){
+			echo("SQL Error.");
+		}
+	}
 }
 ?>
