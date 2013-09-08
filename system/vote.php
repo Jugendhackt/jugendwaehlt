@@ -10,11 +10,11 @@ $count = file_get_contents("http://jw.schaub.it/get.php?table=Themengebiete?acti
 
 //Calculating USER_ID
 $userid = $db->calculate_userid();
+
 // Vote
 for($i = 0; $i < $count; $i++){
 	
 	// DEBUG echo("$i:\n"$_POST['parteiRadio']. "\n" . $_POST['themaID'. $i]. "\n" . $_POST['themaReason' . $i] . "\n");
-	
 	
 	if(isset($_POST['parteiRadio'], $_POST['themaID'. $i])){
 		$vote_status = $db->vote($_POST['parteiRadio'],
@@ -27,5 +27,7 @@ for($i = 0; $i < $count; $i++){
 		}
 	}
 }
-header("Location: ../");
+
+// Forwarding
+header("Location: /index.html");
 ?>
