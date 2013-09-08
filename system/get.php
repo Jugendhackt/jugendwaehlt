@@ -2,21 +2,50 @@
 require_once("config.php");
 require_once("database.php");
 
-// header("Content-type: text/json");
+// Header
+header('content-type: application/json; charset=utf-8');
 
-// Prepare
-$table = strtolower($_REQUEST['t']);
+// Security check (needed param)
+if (!isset($_REQUEST['table'])) exit("Param 'table' missed.");
 
-// Get from DB
-$db = new Database(SQL_HOSTNAME, SQL_DATABASE, SQL_USERNAME, SQL_PASSWORD);
-$result = $db->fetchAll($table);
+// Action (Count / fetchAll)
+$action = (!isset($_REQUEST['action']) || ($_REQUEST['action'] != 'count' && $_REQUEST['action'] != 'fetchAll') ? $action = 'fetchAll' : $action = 'TEST');
 
-// UTF8_Encode & HTMLEntities
-array_walk_recursive($result, function (&$value) {
-    $value = utf8_encode(htmlentities($value));
-});
+// Prepare 'Table'-Feature
+$table = $_REQUEST['table'];
 
-// Print JSON
-print_r(json_encode($result));
+// Prepare 'Where'-Feature
+$where = array();
+foreach($_REQUEST as $k=>$v) $where[$k] = $v;
+unset($where["table"]);
+unset($where["action"]);
+unset($where["callback"]);
+unset($where["_"]);
+
+// Prepare Database
+$db = new Database(SQL_HOSTNAME, SQL_DATABASE, SQL_USERNAME, SQL_PASSWORD, true);
+
+// FETCHALL
+if ($action == 'fetchAll') {
+	// Get from DB
+	$result = $db->fetchAll($table, $where);
+
+	// UTF8_Encode & HTMLEntities
+	array_walk_recursive($result, function (&$value) {
+	    $value = utf8_encode(htmlentities($value));
+	});
+
+	// Print JSON(P)
+	$echo = json_encode($result);
+
+// COUNT
+} else {
+	// Get from DB & Print
+	$echo = $db->rowCount($table, $where);
+}
+
+echo isset($_GET['callback'])
+    ? "{$_GET['callback']}($echo)"
+    : $echo;
 
 ?>

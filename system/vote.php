@@ -1,18 +1,19 @@
 <?php
-require_once("./config.php");
-require_once("./database.php");
+require_once("config.php");
+require_once("database.php");
 
+// Prepare
+$partei_ID = $_POST['partei_ID'];
+$thema_ID = $_POST['thema_ID'];
+$grund = $_POST['grund'];
 
-$partei_id = $_POST['partei'];
-
-$thema_id = $_POST['thema'];
-
-$begruendung = $_POST['why'];
-
+// Database
 $db = new Database(SQL_HOSTNAME, SQL_DATABASE, SQL_USERNAME, SQL_PASSWORD);
-if(!($db->vote($partei_id, $thema_id, $begruendung))){
-	exit("Fail!");
-}else{
-	header(Location: /);
+
+// Vote
+if(!($db->vote($partei_ID, $thema_ID, $grund))){
+	exit("SQL Error.");
+} else {
+	header('Location: /');
 }
 ?>
