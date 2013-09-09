@@ -21,6 +21,7 @@ unset($where["table"]);
 unset($where["action"]);
 unset($where["callback"]);
 unset($where["_"]);
+unset($where["undefined"]);
 
 // Prepare Database
 $db = new Database(SQL_HOSTNAME, SQL_DATABASE, SQL_USERNAME, SQL_PASSWORD, true);
