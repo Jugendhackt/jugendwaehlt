@@ -9,7 +9,7 @@ header('content-type: application/json; charset=utf-8');
 if (!isset($_REQUEST['table'])) exit("Param 'table' missed.");
 
 // Action (Count / fetchAll)
-$action = (!isset($_REQUEST['action']) || ($_REQUEST['action'] != 'count' && $_REQUEST['action'] != 'fetchAll') ? $action = 'fetchAll' : $action = 'TEST');
+$action = (!isset($_REQUEST['action']) || ($_REQUEST['action'] != 'count' && $_REQUEST['action'] != 'fetchAll') ? $action = 'fetchAll' : $action = $_REQUEST['action']);
 
 // Prepare 'Table'-Feature
 $table = $_REQUEST['table'];
