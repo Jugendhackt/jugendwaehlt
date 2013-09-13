@@ -6,7 +6,7 @@ require_once("database.php");
 $db = new Database(SQL_HOSTNAME, SQL_DATABASE, SQL_USERNAME, SQL_PASSWORD);
 
 // Anzahl der Themen
-$count = file_get_contents("http://www.domain.de/get.php?table=Themengebiete?action=count");
+$count = file_get_contents(BASE . "get.php?table=Themengebiete?action=count");
 
 //Calculating USER_ID
 $userid = $db->calculate_userid();
@@ -27,5 +27,5 @@ for($i = 0; $i < $count; $i++) {
 }
 
 // Forwarding
-header("Location: /assets/index.html");
+header("Location: " . BASE . "assets/index.html");
 ?>
